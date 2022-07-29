@@ -2,11 +2,11 @@
 
 use Maclof\Kubernetes\Models\Service;
 
-class ServiceCollection extends Collection
+/**
+ * @extends Collection<Service>
+ */
+final class ServiceCollection extends Collection
 {
-	/**
-	 * The constructor.
-	 */
 	public function __construct(array $items)
 	{
 		parent::__construct($this->getServices($items));
@@ -14,6 +14,8 @@ class ServiceCollection extends Collection
 
 	/**
 	 * Get an array of services.
+	 *
+	 * @return Service[]
 	 */
 	protected function getServices(array $items): array
 	{

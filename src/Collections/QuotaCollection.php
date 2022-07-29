@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\QuotaModel;
 
+/**
+ * @extends Collection<QuotaModel>
+ */
 class QuotaCollection extends Collection
 {
 	/**
@@ -13,7 +16,9 @@ class QuotaCollection extends Collection
 	}
 
 	/**
-	 * Get an array of Namespaces.
+	 * Get an array of Quotas.
+	 *
+	 * @return QuotaModel[]
 	 */
 	protected function getQuotas(array $items): array
 	{

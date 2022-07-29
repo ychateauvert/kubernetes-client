@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\NamespaceModel;
 
+/**
+ * @extends Collection<NamespaceModel>
+ */
 class NamespaceCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class NamespaceCollection extends Collection
 
 	/**
 	 * Get an array of Namespaces.
+	 *
+	 * @return NamespaceModel[]
 	 */
 	protected function getNamespaces(array $items): array
 	{

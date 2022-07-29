@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Deployment;
 
+/**
+ * @extends Collection<Deployment>
+ */
 class DeploymentCollection extends Collection
 {
 	/**

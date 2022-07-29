@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\NetworkPolicy;
 
+/**
+ * @extends Collection<NetworkPolicy>
+ */
 class NetworkPolicyCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class NetworkPolicyCollection extends Collection
 
 	/**
 	 * Get an array of network policies.
+	 *
+	 * @return NetworkPolicy[]
 	 */
 	protected function getPolicies(array $items): array
 	{

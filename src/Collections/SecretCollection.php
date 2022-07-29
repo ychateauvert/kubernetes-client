@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Secret;
 
+/**
+ * @extends Collection<Secret>
+ */
 class SecretCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class SecretCollection extends Collection
 
 	/**
 	 * Get an array of secrets.
+	 *
+	 * @return Secret[]
 	 */
 	protected function getSecrets(array $items): array
 	{

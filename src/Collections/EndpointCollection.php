@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Endpoint;
 
+/**
+ * @extends Collection<Endpoint>
+ */
 class EndpointCollection extends Collection
 {
 	/**

@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\ReplicationController;
 
+/**
+ * @extends Collection<ReplicationController>
+ */
 class ReplicationControllerCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class ReplicationControllerCollection extends Collection
 
 	/**
 	 * Get an array of replication controllers.
+	 *
+	 * @return ReplicationController[]
 	 */
 	protected function getReplicationControllers(array $items): array
 	{

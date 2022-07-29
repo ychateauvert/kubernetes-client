@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\DaemonSet;
 
+/**
+ * @extends Collection<DaemonSet>
+ */
 class DaemonSetCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class DaemonSetCollection extends Collection
 
 	/**
 	 * Get an array of daemon sets.
+	 *
+	 * @return DaemonSet[]
 	 */
 	protected function getDaemonSets(array $items): array
 	{

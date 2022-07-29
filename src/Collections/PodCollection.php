@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Pod;
 
+/**
+ * @extends Collection<Pod>
+ */
 class PodCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class PodCollection extends Collection
 
 	/**
 	 * Get an array of pods.
+	 *
+	 * @return Pod[]
 	 */
 	protected function getPods(array $items): array
 	{

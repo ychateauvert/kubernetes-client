@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\HorizontalPodAutoscaler;
 
+/**
+ * @extends Collection<HorizontalPodAutoscaler>
+ */
 class HorizontalPodAutoscalerCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class HorizontalPodAutoscalerCollection extends Collection
 
 	/**
 	 * Get an array of autoscalers.
+	 *
+	 * @return HorizontalPodAutoscaler[]
 	 */
 	protected function getHorizontalPodAutoscalers(array $items): array
 	{

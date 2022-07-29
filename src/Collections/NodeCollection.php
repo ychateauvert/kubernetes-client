@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Node;
 
+/**
+ * @extends Collection<Node>
+ */
 class NodeCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class NodeCollection extends Collection
 
 	/**
 	 * Get an array of nodes.
+	 *
+	 * @return Node[]
 	 */
 	protected function getNodes(array $items): array
 	{

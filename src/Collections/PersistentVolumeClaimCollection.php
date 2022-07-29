@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\PersistentVolumeClaim;
 
+/**
+ * @extends Collection<PersistentVolumeClaim>
+ */
 class PersistentVolumeClaimCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class PersistentVolumeClaimCollection extends Collection
 
 	/**
 	 * Get an array of persistent volume claims.
+	 *
+	 * @return PersistentVolumeClaim[]
 	 */
 	protected function getPersistentVolumeClaims(array $items): array
 	{
