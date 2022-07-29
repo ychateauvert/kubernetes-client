@@ -1,7 +1,5 @@
 <?php namespace Maclof\Kubernetes;
 
-use Maclof\Kubernetes\Repositories\Repository;
-
 class RepositoryRegistry implements \ArrayAccess, \Countable
 {
 
