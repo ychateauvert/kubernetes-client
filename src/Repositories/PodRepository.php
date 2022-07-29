@@ -3,6 +3,9 @@
 use Maclof\Kubernetes\Models\Pod;
 use Maclof\Kubernetes\Collections\PodCollection;
 
+/**
+ * @extends Repository<Pod>
+ */
 class PodRepository extends Repository
 {
 	protected string $uri = 'pods';
