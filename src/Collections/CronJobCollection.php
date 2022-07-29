@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\CronJob;
 
+/**
+ * @extends Collection<CronJob>
+ */
 class CronJobCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class CronJobCollection extends Collection
 
 	/**
 	 * Get an array of cron jobs.
+	 *
+	 * @return CronJob[]
 	 */
 	protected function getCronJobs(array $items): array
 	{

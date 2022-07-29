@@ -3,6 +3,9 @@
 use Maclof\Kubernetes\Models\PersistentVolume;
 use Maclof\Kubernetes\Collections\Collection;
 
+/**
+ * @extends Collection<PersistentVolume>
+ */
 class PersistentVolumeCollection extends Collection
 {
 	/**
@@ -15,6 +18,8 @@ class PersistentVolumeCollection extends Collection
 
 	/**
 	 * Get an array of persistent volumes.
+	 *
+	 * @return PersistentVolume[]
 	 */
 	protected function getPersistentVolumes(array $items): array
 	{

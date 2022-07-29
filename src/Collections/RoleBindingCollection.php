@@ -7,7 +7,7 @@ namespace Maclof\Kubernetes\Collections;
 use Maclof\Kubernetes\Models\RoleBinding;
 
 /**
- * @author      Richard Déloge <richarddeloge@gmail.com>
+ * @extends Collection<RoleBinding>
  */
 class RoleBindingCollection extends Collection
 {
@@ -22,10 +22,10 @@ class RoleBindingCollection extends Collection
     /**
      * Get an array of serviceAccounts.
      *
-     * @param  array<int, array<mixed>|RoleBinding> $items
-     * @return array<RoleBinding>
+     * @param  array<int, array|RoleBinding> $items
+     * @return RoleBinding[]
      */
-    protected function getServiceAccounts(array $items)
+    protected function getServiceAccounts(array $items): array
     {
         $final = [];
         foreach ($items as &$item) {

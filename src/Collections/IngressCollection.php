@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Ingress;
 
+/**
+ * @extends Collection<Ingress>
+ */
 class IngressCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class IngressCollection extends Collection
 
 	/**
 	 * Get an array of Ingresses.
+	 *
+	 * @return Ingress[]
 	 */
 	protected function getIngresses(array $items): array
 	{

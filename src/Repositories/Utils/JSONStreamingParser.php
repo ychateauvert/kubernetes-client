@@ -1,6 +1,7 @@
 <?php namespace Maclof\Kubernetes\Repositories\Utils;
 
 use GuzzleHttp\Psr7\Stream;
+use Maclof\Kubernetes\Exceptions\ParsingException;
 
 class JSONStreamingParser
 {
@@ -294,11 +295,9 @@ class JSONStreamingParser
 
 			case self::STATE_DONE:
 				$this->throwParseError('Expected end of document.');
-				break;
 
 			default:
 				$this->throwParseError('Internal error. Reached an unknown state: '.$this->state);
-				break;
 		}
 	}
 

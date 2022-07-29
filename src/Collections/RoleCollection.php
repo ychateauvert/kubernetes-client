@@ -7,13 +7,10 @@ namespace Maclof\Kubernetes\Collections;
 use Maclof\Kubernetes\Models\Role;
 
 /**
- * @author      Richard Déloge <richarddeloge@gmail.com>
+ * @extends Collection<Role>
  */
 class RoleCollection extends Collection
 {
-    /**
-     * @param array<int, array<mixed>|Role> $items
-     */
     public function __construct(array $items)
     {
         parent::__construct($this->getServiceAccounts($items));
@@ -22,10 +19,10 @@ class RoleCollection extends Collection
     /**
      * Get an array of serviceAccounts.
      *
-     * @param  array<int, array<mixed>|Role> $items
-     * @return array<Role>
+     * @param  array<int, array|Role> $items
+     * @return Role[]
      */
-    protected function getServiceAccounts(array $items)
+    protected function getServiceAccounts(array $items): array
     {
         $final = [];
         foreach ($items as &$item) {

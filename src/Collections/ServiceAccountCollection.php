@@ -7,13 +7,10 @@ namespace Maclof\Kubernetes\Collections;
 use Maclof\Kubernetes\Models\ServiceAccount;
 
 /**
- * @author      Richard Déloge <richarddeloge@gmail.com>
+ * @extends Collection<ServiceAccount>
  */
 class ServiceAccountCollection extends Collection
 {
-    /**
-     * @param array<int, array<mixed>|ServiceAccount> $items
-     */
     public function __construct(array $items)
     {
         parent::__construct($this->getServiceAccounts($items));
@@ -22,10 +19,10 @@ class ServiceAccountCollection extends Collection
     /**
      * Get an array of serviceAccounts.
      *
-     * @param  array<int, array<mixed>|ServiceAccount> $items
-     * @return array<ServiceAccount>
+     * @param  array<int, array|ServiceAccount> $items
+     * @return ServiceAccount[]
      */
-    protected function getServiceAccounts(array $items)
+    protected function getServiceAccounts(array $items): array
     {
         $final = [];
         foreach ($items as &$item) {

@@ -8,6 +8,9 @@ use Maclof\Kubernetes\Models\DeleteOptions;
 use Maclof\Kubernetes\Repositories\Utils\JSONStreamingParser;
 use Maclof\Kubernetes\Repositories\Utils\JSONStreamingListener;
 
+/**
+ * @template T of \Maclof\Kubernetes\Models\Model
+ */
 abstract class Repository
 {
 	/**
@@ -55,9 +58,6 @@ abstract class Repository
 	 */
 	protected string $modelClassNamespace = 'Maclof\Kubernetes\Models\\';
 
-	/**
-	 * The constructor.
-	 */
 	public function __construct(Client $client)
 	{
 		$this->client = $client;
@@ -102,6 +102,8 @@ abstract class Repository
 
 	/**
 	 * Create a new model.
+	 *
+	 * @param T $model
 	 */
 	public function create(Model $model): array
 	{
@@ -110,6 +112,8 @@ abstract class Repository
 
 	/**
 	 * Update a model.
+	 *
+	 * @param T $model
 	 */
 	public function update(Model $model): array
 	{
@@ -118,6 +122,8 @@ abstract class Repository
 
 	/**
 	 * Patch a model.
+	 *
+	 * @param T $model
 	 */
 	public function patch(Model $model): array
 	{
@@ -126,6 +132,8 @@ abstract class Repository
 
 	/**
 	 * Apply a json patch to a model.
+	 *
+	 * @param T $model
 	 */
 	public function applyJsonPatch(Model $model, array $patch): array
 	{
@@ -140,7 +148,9 @@ abstract class Repository
      * Apply a model.
      *
      * Creates a new api object if not exists, or patch.
-     */
+	 *
+	 * @param T $model
+	 */
 	public function apply(Model $model): array
     {
         $exists = $this->exists((string)$model->getMetadata("name"));
@@ -154,6 +164,8 @@ abstract class Repository
 
 	/**
 	 * Delete a model.
+	 *
+	 * @param T $model
 	 */
 	public function delete(Model $model, DeleteOptions $options = null): array
 	{
@@ -172,6 +184,8 @@ abstract class Repository
 
 	/**
 	 * Set the label selector including inequality search terms.
+	 *
+	 * @return Repository<T>
 	 */
 	public function setLabelSelector(array $labelSelector, array $inequalityLabelSelector=[]): Repository
 	{
@@ -201,6 +215,8 @@ abstract class Repository
 
 	/**
 	 * Set the field selector including inequality search terms.
+	 *
+	 * @return Repository<T>
 	 */
 	public function setFieldSelector(array $fieldSelector, array $inequalityFieldSelector=[]): Repository
 	{
@@ -240,6 +256,8 @@ abstract class Repository
 
 	/**
 	 * Get a collection of items.
+	 *
+	 * @return Collection<T>
 	 */
 	public function find(array $query = []): Collection
 	{
@@ -259,6 +277,8 @@ abstract class Repository
 
 	/**
 	 * Find the first item.
+	 *
+	 * @return T
 	 */
 	public function first(): ?Model
 	{
@@ -267,6 +287,8 @@ abstract class Repository
 
 	/**
 	 * Watch a model for changes.
+	 *
+	 * @param T $model
 	 */
 	public function watch(Model $model, Closure $closure, array $query = []): void
 	{
@@ -307,6 +329,8 @@ abstract class Repository
 
 	/**
 	 * Create a collection of models from the response.
+	 *
+	 * @return Collection<T>
 	 */
 	abstract protected function createCollection(array $response): Collection;
 }

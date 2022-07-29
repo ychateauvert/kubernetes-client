@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Certificate;
 
+/**
+ * @extends Collection<Certificate>
+ */
 class CertificateCollection extends Collection
 {
     /**
@@ -14,6 +17,8 @@ class CertificateCollection extends Collection
 
     /**
      * Get an array of certificates.
+	 *
+	 * @return Certificate[]
      */
     protected function getCertificates(array $items): array
     {

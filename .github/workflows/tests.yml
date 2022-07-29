@@ -1,0 +1,25 @@
+name: Tests
+
+on: [push]
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: apcu, bz2, curl, iconv, intl, ctype, sockets
+          tools: composer:v2
+
+      - name: Install composer dependencies
+        run: composer install --optimize-autoloader
+
+      - name: PHPUnit
+        run: php vendor/bin/phpunit
+

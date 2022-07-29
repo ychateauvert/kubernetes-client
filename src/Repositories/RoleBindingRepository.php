@@ -9,14 +9,14 @@ use Maclof\Kubernetes\Models\RoleBinding;
 use Maclof\Kubernetes\Collections\Collection;
 
 /**
- * @author      Richard Déloge <richarddeloge@gmail.com>
+ * @extends Repository<RoleBinding>
  */
 class RoleBindingRepository extends Repository
 {
     protected string $uri = 'rolebindings';
 
     /**
-     * @param array{items: array<int, array<mixed>|RoleBinding>} $response
+     * @param array{items: array<int, array|RoleBinding>} $response
      */
     protected function createCollection(array $response): Collection
     {

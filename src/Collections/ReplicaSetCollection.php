@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\ReplicaSet;
 
+/**
+ * @extends Collection<ReplicaSet>
+ */
 class ReplicaSetCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class ReplicaSetCollection extends Collection
 
 	/**
 	 * Get an array of replication sets.
+	 *
+	 * @return ReplicaSet[]
 	 */
 	protected function getReplicaSets(array $items): array
 	{

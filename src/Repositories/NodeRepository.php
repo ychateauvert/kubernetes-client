@@ -3,6 +3,9 @@
 use Maclof\Kubernetes\Collections\NodeCollection;
 use Maclof\Kubernetes\Models\Node;
 
+/**
+ * @extends Repository<Node>
+ */
 class NodeRepository extends Repository
 {
 	protected string $uri = 'nodes';

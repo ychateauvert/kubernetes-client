@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Job;
 
+/**
+ * @extends Collection<Job>
+ */
 class JobCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class JobCollection extends Collection
 
 	/**
 	 * Get an array of jobs.
+	 *
+	 * @return Job[]
 	 */
 	protected function getJobs(array $items): array
 	{

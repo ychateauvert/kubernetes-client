@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Issuer;
 
+/**
+ * @extends Collection<Issuer>
+ */
 class IssuerCollection extends Collection
 {
     /**
@@ -14,6 +17,8 @@ class IssuerCollection extends Collection
 
     /**
      * Get an array of certificate issuers.
+	 *
+	 * @return Issuer[]
      */
     protected function getIssuers(array $items): array
     {

@@ -9,14 +9,14 @@ use Maclof\Kubernetes\Models\Role;
 use Maclof\Kubernetes\Collections\Collection;
 
 /**
- * @author      Richard Déloge <richarddeloge@gmail.com>
+ * @extends Repository<Role>
  */
 class RoleRepository extends Repository
 {
     protected string $uri = 'roles';
 
     /**
-     * @param array{items: array<int, array<mixed>|Role>} $response
+     * @param array{items: array<int, array|Role>} $response
      */
     protected function createCollection(array $response): Collection
     {

@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\Event;
 
+/**
+ * @extends Collection<Event>
+ */
 class EventCollection extends Collection
 {
 	/**

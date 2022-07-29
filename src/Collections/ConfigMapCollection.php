@@ -2,6 +2,9 @@
 
 use Maclof\Kubernetes\Models\ConfigMap;
 
+/**
+ * @extends Collection<ConfigMap>
+ */
 class ConfigMapCollection extends Collection
 {
 	/**
@@ -14,6 +17,8 @@ class ConfigMapCollection extends Collection
 
 	/**
 	 * Get an array of config maps.
+	 *
+	 * @return ConfigMap[]
 	 */
 	protected function getConfigMaps(array $items): array
 	{

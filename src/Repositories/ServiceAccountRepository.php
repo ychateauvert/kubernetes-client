@@ -9,14 +9,14 @@ use Maclof\Kubernetes\Models\ServiceAccount;
 use Maclof\Kubernetes\Collections\Collection;
 
 /**
- * @author      Richard Déloge <richarddeloge@gmail.com>
+ * @extends Repository<ServiceAccount>
  */
 class ServiceAccountRepository extends Repository
 {
     protected string $uri = 'serviceaccounts';
 
     /**
-     * @param array{items: array<int, array<mixed>|ServiceAccount>} $response
+     * @param array{items: array<int, array|ServiceAccount>} $response
      */
     protected function createCollection(array $response): Collection
     {

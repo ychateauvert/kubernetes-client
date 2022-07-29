@@ -2,7 +2,11 @@
 namespace Maclof\Kubernetes\Repositories;
 
 use Maclof\Kubernetes\Collections\PersistentVolumeCollection;
+use Maclof\Kubernetes\Models\PersistentVolume;
 
+/**
+ * @extends Repository<PersistentVolume>
+ */
 class PersistentVolumeRepository extends Repository
 {
 	protected string $uri = 'persistentvolumes';
