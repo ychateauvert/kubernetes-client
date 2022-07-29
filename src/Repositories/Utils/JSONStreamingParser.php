@@ -57,6 +57,8 @@ class JSONStreamingParser
 
 	private string $unicodeEscapeBuffer = '';
 
+	private string $lineEnding;
+
 	private int $lineNumber;
 
 	private int $charNumber;
