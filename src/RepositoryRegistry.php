@@ -1,5 +1,7 @@
 <?php namespace Maclof\Kubernetes;
 
+use Maclof\Kubernetes\Repositories\Repository;
+
 class RepositoryRegistry implements \ArrayAccess, \Countable
 {
 
@@ -61,7 +63,7 @@ class RepositoryRegistry implements \ArrayAccess, \Countable
     }
 
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset): Repository
     {
         return $this->map[$offset];
     }
